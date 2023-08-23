@@ -222,7 +222,7 @@ Follow these steps to set up and run the BookHaven project locally:
    ```sh
    php artisan key:generate
 
-4.  **Create Database**: Create the bookhaven_db database using your preferred MySQL client.
+4.  **Create Database**: Create the `employee_management_system` database using your preferred MySQL client.
 
 5. **Database Configuration**: In the .env file, update the following lines with your database credentials:
    ```sh
