@@ -9,6 +9,9 @@ The Role-Based Employee Management System using Laravel, simplifies employee dat
 2. [AdminPanelController](#adminpanelcontroller)
 3. [UserPanelController](#userpanelcontroller)
 4. [Application Routes](#application-routes)
+5. [Getting Started](#getting-started)
+6. [Troubleshooting Common Issues](#troubleshooting-common-issues)
+7. [Screenshots](#screenshots)
    
 
 
@@ -199,10 +202,81 @@ This route leads to the user panel view, providing users access to their own emp
 * Displays the user panel using the UserPanelController's index method.
 * Named as 'user-panel'.
 
+## Getting Started
+
+Follow these steps to set up and run the BookHaven project locally:
+
+1. **Clone the Repository**: Clone this repository to your local development environment using the following command:  
+   ```sh
+   git clone https://github.com/safeeras042/Employee-Management-System.git
+
+2. **Install Dependencies**: Navigate to the project directory and install the required PHP dependencies using Composer:
+   ```sh
+   cd Employee-Management-System
+   composer install
+
+3. **Create .env File**: Copy it to create your own .env file:
+   ```sh
+   cp .env.example .env
+* Then, generate an application key using the following command:
+   ```sh
+   php artisan key:generate
+
+4.  **Create Database**: Create the bookhaven_db database using your preferred MySQL client.
+
+5. **Database Configuration**: In the .env file, update the following lines with your database credentials:
+   ```sh
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=employee_management_system
+      DB_USERNAME=root
+      DB_PASSWORD=
+
+6. **Install JavaScript Dependencies**: Install the JavaScript dependencies using npm:
+   ```sh
+   npm install
+
+7. **Build Frontend Assets**: Build the frontend assets by running the following command:
+   ```sh
+   npm run dev
+
+8. **Start the Development Server**: Launch the Laravel development server:
+   ```sh
+   php artisan serve
+
+9. **Access the Application**: Open a web browser and visit http://localhost:8000 to access the BookHaven application.
 
 
+## Troubleshooting Common Issues
 
+### Issue: Failed to Listen on 127.0.0.1:8000
 
+**Solution**:
+1. Navigate to your PHP installation folder.
+2. Find the `php.ini-development` file and rename it to `php.ini`.
+
+---
+
+### Issue: Call to Undefined Function Illuminate\Encryption\openssl_cipher_iv_length()
+
+**Solution**:
+1. Open your `php.ini` file.
+2. Search for the `;extension=openssl` line.
+3. Remove the semicolon `;` at the beginning of the line to uncomment it.
+4. Save the `php.ini` file.
+5. Restart your server.
+
+---
+
+### Issue: Illuminate\Database\QueryException Could Not Find Driver
+
+**Solution**:
+1. Open your `php.ini` file.
+2. Search for the `;extension=pdo_mysql` line.
+3. Remove the semicolon `;` at the beginning of the line to uncomment it.
+4. Save the `php.ini` file.
+5. Restart your server.
 
 
 
