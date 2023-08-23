@@ -152,7 +152,7 @@ The application features routes that provide different functionalities based on 
 
 ## Dashboard Route
 `/dashboard`
-Description: This route leads to the dashboard view, accessible to authenticated and verified users.
+This route leads to the dashboard view, accessible to authenticated and verified users.
 
 Functionality:
 
