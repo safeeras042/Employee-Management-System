@@ -1,4 +1,17 @@
 # Employee Management System using Laravel
+The Role-Based Employee Management System using Laravel, simplifies employee data handling. Admins exercise CRUD operations, users access personalized views, all supported by stringent data validation. This secure, user-friendly interface harnesses Laravel's power for precise and efficient employee data management.
+
+
+## Table of Contents
+
+
+1. [Features](#features)
+2. [AdminPanelController](#adminpanelcontroller)
+3. [UserPanelController](#userpanelcontroller)
+4. [Application Routes](#application-routes)
+   
+
+
 ## Features:
 1. User Authentication and Authorization:
 
@@ -111,8 +124,80 @@ Functionality:
 ***
 
 
+# UserPanelController
+The UserPanelController manages the functionalities specific to the user panel of the Employee Management System. It provides authenticated users access to their own employee information and ensures a seamless user experience.
+
+## Method
+`index`
+This method is responsible for displaying the user panel for authenticated users, allowing them to view their own employee information. If a user is not authenticated, it redirects them to the login page while sending 'from' data to indicate the source of the redirection.
+
+Functionality:
+
+* Checks if the user is authenticated using auth()->check().
+* If the user is not authenticated:
+* Redirects to the login page (route('login')) and includes 'from' data to manage redirection after login.
+***
+* If the user is authenticated:
+* Retrieves the authenticated user using auth()->user().
+* Retrieves the associated employee data using Employee::where('user_id', $user->id)->first().
+* Passes user and employee data to the user-panel view for rendering.
+***
 
 
+# Application Routes
+The application features routes that provide different functionalities based on user roles and authentication status. These routes facilitate interactions within the Employee Management System.
+
+## Dashboard Route
+`/dashboard`
+Description: This route leads to the dashboard view, accessible to authenticated and verified users.
+
+Functionality:
+
+* Displays the index view.
+* Requires users to be authenticated and verified.
+* Named as 'dashboard'.
+
+## Admin Routes
+`Middleware: ['auth', 'admin']`
+
+The admin routes group encompasses actions that are exclusive to admin users for managing employee data.
+
+`/admin`
+This route leads to the admin panel view, where administrators can manage employees.
+* Displays the admin panel using the AdminPanelController's index method.
+* Named as 'admin'.
+
+`/create-user`
+This route displays the form for creating a new user (employee).
+* Displays the user creation form using the AdminPanelController's showCreateForm method.
+* Named as 'create-user'.
+
+`POST /create-user`
+This route handles the submission of the user creation form.
+
+* Invokes the AdminPanelController's store method to create a new user and associated employee.
+* Named as 'store-user'.
+
+`DELETE /delete-user/{id}`
+This route handles the deletion of a user (employee).
+* Invokes the AdminPanelController's deleteUser method to delete an employee and its associated user.
+* Named as 'delete-user'.
+  
+`/edit-user/{id}`
+This route displays the form for editing an existing user's information.
+* Displays the edit user form using the AdminPanelController's showEditForm method.
+* Named as 'edit-user'.
+
+`PUT /update-user/{id}`
+This route handles the submission of the user information update form.
+* Invokes the AdminPanelController's updateUser method to update an employee's information.
+* Named as 'update-user'.
+  
+## User Panel Route
+`/user-panel`
+This route leads to the user panel view, providing users access to their own employee information.
+* Displays the user panel using the UserPanelController's index method.
+* Named as 'user-panel'.
 
 
 
