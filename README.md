@@ -278,9 +278,16 @@ Follow these steps to set up and run the BookHaven project locally:
 4. Save the `php.ini` file.
 5. Restart your server.
 
+## Screenshots
 
+![Index](https://github.com/safeeras042/Employee-Management-System/assets/134996928/f61a387c-14d7-46d1-bc7f-1408f67b28ce)
 
+![Admin-Panel (1)](https://github.com/safeeras042/Employee-Management-System/assets/134996928/5ea206fa-730a-40ed-a0db-2c889355b592)
 
+![Create-User](https://github.com/safeeras042/Employee-Management-System/assets/134996928/edf521d7-11e9-4353-8a79-fb01bc63fa10)
+
+![Edit-User](https://github.com/safeeras042/Employee-Management-System/assets/134996928/4a863073-02c2-40db-925a-6e6566dc55cf)
+![User-Panel](https://github.com/safeeras042/Employee-Management-System/assets/134996928/07c714b7-8eb6-45d0-9c3f-8eab101923fe)
 
 
 
