@@ -233,19 +233,24 @@ Follow these steps to set up and run the BookHaven project locally:
       DB_USERNAME=root
       DB_PASSWORD=
 
-6. **Install JavaScript Dependencies**: Install the JavaScript dependencies using npm:
+6. Run the database migrations to create the necessary tables:
+   ```sh
+   php artisan migrate
+   ```
+
+7. **Install JavaScript Dependencies**: Install the JavaScript dependencies using npm:
    ```sh
    npm install
 
-7. **Build Frontend Assets**: Build the frontend assets by running the following command:
+8. **Build Frontend Assets**: Build the frontend assets by running the following command:
    ```sh
    npm run dev
 
-8. **Start the Development Server**: Launch the Laravel development server:
+9. **Start the Development Server**: Launch the Laravel development server:
    ```sh
    php artisan serve
 
-9. **Access the Application**: Open a web browser and visit http://localhost:8000 to access the BookHaven application.
+10. **Access the Application**: Open a web browser and visit http://localhost:8000 to access the BookHaven application.
 
 
 ## Troubleshooting Common Issues
